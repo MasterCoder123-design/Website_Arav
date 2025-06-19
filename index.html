@@ -3,77 +3,182 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/png" href="Logo.png">
   <title>Arav Arora | Portfolio</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    /* Color scheme variables */
+    :root {
+      --primary-color: #2ec4b6; /* electric teal */
+      --secondary-color: #9d4edd; /* neon purple */
+      --bg-dark: #0a1f2c;        /* deep blue/black */
+      --bg-medium: #144552;      /* muted dark blue */
+      --text-light: #e0f7fa;     /* pale cyan */
+      --text-muted: #a0bacc;     /* soft blue-gray */
+      --accent-glow: #2ec4b6cc; /* teal glow with alpha */
+      --shadow-glow: #9d4eddaa; /* purple glow with alpha */
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-medium));
+      color: var(--text-light);
       scroll-behavior: smooth;
+      user-select: none;
     }
+
     header {
-      background-color: #0d1b2a;
-      color: white;
-      padding: 1.5em;
       text-align: center;
+      margin-top: 100px;
+      position: relative;
+      z-index: 1;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color);
     }
+
+    header h1 {
+      font-size: 3.8rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.3em;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: color-slide 4s linear infinite;
+    }
+
+    @keyframes color-slide {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
     nav a {
-      color: #ffd166;
-      margin: 0 12px;
+      color: var(--text-light);
       text-decoration: none;
-      font-weight: bold;
+      padding: 0.6em 1.2em;
+      margin: 0 0.4em;
+      display: inline-block;
+      font-weight: 600;
+      border-radius: 12px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      box-shadow: 0 0 10px var(--accent-glow);
+      transition: all 0.3s ease;
+      user-select: none;
     }
+
     nav a:hover {
+      background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+      box-shadow: 0 0 20px var(--shadow-glow);
+      color: var(--bg-dark);
       text-decoration: underline;
+      cursor: pointer;
+      transform: scale(1.1);
     }
+
     section {
-      padding: 2em;
+      padding: 2.5em;
       max-width: 1000px;
-      margin: auto;
+      margin: 2em auto;
+      border-radius: 12px;
+      background: linear-gradient(145deg, var(--bg-medium), var(--bg-dark));
+      box-shadow:
+        0 0 10px var(--accent-glow),
+        inset 0 0 20px var(--shadow-glow);
+      color: var(--text-light);
+      position: relative;
+      z-index: 1;
+      user-select: text;
     }
+
+    section h2 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-bottom: 1em;
+      color: var(--secondary-color);
+      text-shadow: 0 0 8px var(--shadow-glow);
+      letter-spacing: 0.1em;
+    }
+
     .project-card, .award-card {
-      background-color: #ffffff;
-      padding: 1em;
-      margin-bottom: 1.5em;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-medium));
+      padding: 1.2em;
+      margin-bottom: 1.6em;
+      border-radius: 10px;
+      border: 1px solid var(--accent-glow);
+      box-shadow:
+        0 2px 5px var(--accent-glow),
+        inset 0 0 10px var(--shadow-glow);
+      transition: transform 0.3s ease;
+      cursor: default;
     }
+
+    .project-card:hover, .award-card:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 8px 20px var(--shadow-glow),
+        inset 0 0 15px var(--accent-glow);
+    }
+
+    .project-card h3, .award-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.6em;
+      text-shadow: 0 0 8px var(--accent-glow);
+    }
+
     .project-card a {
-      color: #118ab2;
+      color: var(--secondary-color);
+      font-weight: 700;
       text-decoration: none;
-      font-weight: bold;
+      transition: color 0.3s ease;
+      user-select: none;
     }
-    .contact-info {
-      background: white;
-      padding: 1.5em;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      max-width: 500px;
-      margin: auto;
-      font-size: 1.1em;
-      line-height: 1.6em;
-    }
-    .contact-info a {
-      color: #118ab2;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
+
+    .project-card a:hover {
+      color: var(--primary-color);
       text-decoration: underline;
     }
+
     footer {
-      background-color: #0d1b2a;
-      color: white;
+      background: linear-gradient(90deg, var(--bg-dark), var(--bg-medium));
+      color: var(--secondary-color);
       text-align: center;
-      padding: 1.2em;
+      padding: 1.4em;
       margin-top: 3em;
+      position: relative;
+      z-index: 1;
+      user-select: none;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 10px var(--shadow-glow);
+    }
+
+    /* Spark container styles */
+    #spark-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none; /* So clicks pass through */
+      z-index: 9999; /* On top of everything */
+    }
+    #spark-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Arav Arora</h1>
     <p>Student | Future Engineer | Project Enthusiast</p>
@@ -86,9 +191,14 @@
     </nav>
   </header>
 
+  <!-- Spark Container -->
+  <div id="spark-container">
+    <canvas id="spark-canvas"></canvas>
+  </div>
+
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello, my name is Arav Arora. I am a dedicated and innovative student with a strong passion for technology, engineering, and creative problem-solving. With experience in coding, game development, and hands-on STEM projects, I strive to turn ideas into impactful, real-world solutions.</p>
+    <p>Hello, my name is Arav Arora. I am a student passionate about engineering, technology, and building creative projects. This portfolio showcases some of the work I’ve done and the skills I’m developing along the way.</p>
   </section>
 
   <section id="projects">
@@ -153,26 +263,113 @@
     </div>
   </section>
 
-  <section id="resumé">
+  <section id="resume">
     <h2>Resume</h2>
     <p><strong>Education:</strong> Middle School Student passionate about STEM and innovation.</p>
-    <p><strong>Skills:</strong> Python, HTML/CSS,Fusion 360, Tinkercad, Video Production</p>
-    <p><strong>Experience:</strong> aught a 2 week intro to 3D Printing Class; Launched Palo Alto Rocketry Club; Participated in Technology Students Association (TSA) at state and national levels; Volunteer at Hoover Kids Club; Founded Middle School D&D Club.</p>
-    <p><strong>Interests/Activities:</strong> Robotics, Game Development, AI & Machine Learning, Rocketry, Coding, State Level Karate competitionzs</p>
+    <p><strong>Skills:</strong> Python, HTML/CSS, Fusion 360, Tinkercad, Video Production</p>
+    <p><strong>Experience:</strong> Taught 3D Printing class, Launched Rocketry Club, TSA participant, Hoover Kids Club volunteer, founded D&D Club.</p>
+    <p><strong>Interests:</strong> Robotics, Game Development, AI, Rocketry, Coding, Karate</p>
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:arav.a.arora1@gmail.com">arav(dot)a(dot)arora1(at)gmail(dot)com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="" target="_blank">None... yet</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/MasterCoder123-design" target="_blank">github.com/MasterCoder123-design</a></p>
-      <p><strong>Twitter:</strong> <a href="" target="_blank">None... yet</a></p>
-    </div>
+    <h2>Contact</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a>arav(dot)a(dot)arora1(at)gmail(dot)com</a></p>
+        <p><strong>GitHub:</strong> <a>github.com/MasterCoder123-design</a></p>
+        <p><strong>LinkedIn:</strong> <em>None... yet</em></p>
+        <p><strong>Twitter:</strong> <em>None... yet</em></p>
   </section>
 
   <footer>
     <p>© Arav Arora - All Rights Reserved</p>
   </footer>
+
+  <script>
+    (function() {
+      const container = document.getElementById('spark-container');
+      const canvas = document.getElementById('spark-canvas');
+      const ctx = canvas.getContext('2d');
+
+      let sparks = [];
+
+      const sparkCount = 10;
+      const sparkRadius = 20;
+      const sparkSize = 12;
+      const duration = 500;
+      const colors = [
+        'var(--primary-color)',
+        'var(--secondary-color)',
+        '#26c6da', // cyan-ish
+        '#26c6da', // cyan-ish
+        '#26c6da', // cyan-ish
+        '#26c6da', // cyan-ish
+        '#26c6da', // cyan-ish
+        '#26c6da', // cyan-ish
+      ];
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      function easeOut(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function draw(timestamp) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        sparks = sparks.filter(spark => {
+          const elapsed = timestamp - spark.startTime;
+          if (elapsed > duration) return false;
+
+          const progress = elapsed / duration;
+          const eased = easeOut(progress);
+
+          const distance = eased * sparkRadius;
+          const length = sparkSize * (1 - eased);
+
+          const x1 = spark.x + distance * Math.cos(spark.angle);
+          const y1 = spark.y + distance * Math.sin(spark.angle);
+          const x2 = spark.x + (distance + length) * Math.cos(spark.angle);
+          const y2 = spark.y + (distance + length) * Math.sin(spark.angle);
+
+          ctx.strokeStyle = spark.color;
+          ctx.lineWidth = 3;
+          ctx.shadowColor = spark.color;
+          ctx.shadowBlur = 8;
+          ctx.beginPath();
+          ctx.moveTo(x1, y1);
+          ctx.lineTo(x2, y2);
+          ctx.stroke();
+
+          return true;
+        });
+
+        requestAnimationFrame(draw);
+      }
+
+      requestAnimationFrame(draw);
+
+      document.addEventListener('click', e => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const now = performance.now();
+
+        for (let i = 0; i < sparkCount; i++) {
+          sparks.push({
+            x,
+            y,
+            angle: (2 * Math.PI * i) / sparkCount,
+            startTime: now,
+            color: colors[i % colors.length],
+          });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
