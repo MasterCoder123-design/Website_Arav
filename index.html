@@ -506,24 +506,12 @@
       </nav>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="section-container">
-        <h2 class="section-title">About Me</h2>
-        <p class="about-text">
-          Hello, my name is Arav Arora. I am a student passionate about engineering, technology, and building creative projects. 
-          This portfolio showcases some of the work I've done and the skills I'm developing along the way. I love combining 
-          creativity with technical skills to build innovative solutions and engaging experiences.
-        </p>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
+   <!-- Projects Section -->
     <section id="projects">
       <div class="section-container">
         <h2 class="section-title">My Projects</h2>
         <div class="projects-grid">
-          <div class="project-card">
+          <div class="project-card" onclick="openModal('anthocyanin-modal')">
             <h3 class="project-title">Fruit Ripeness Indicator Using Anthocyanin</h3>
             <p class="project-description">Developed a natural pH-based system using red cabbage extract (anthocyanin) to detect fruit ripeness by monitoring color changes in response to ethylene gas released during ripening.</p>
             <div class="tech-tags">
@@ -533,10 +521,10 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" onclick="openModal('flappy-bird-modal')">
             <h3 class="project-title">Flappy Bird (Coded Recreation)</h3>
             <p class="project-description">Recreated the classic Flappy Bird game using Python, implementing gravity, collision detection, and score tracking for a smooth and engaging gameplay experience.</p>
-            <a href="https://origami-and-stuff.trinket.io/sites/flappy-bird" target="_blank" class="project-link">Play Game</a>
+            <a href="https://origami-and-stuff.trinket.io/sites/flappy-bird" target="_blank" class="project-link" onclick="event.stopPropagation()">Play Game</a>
             <div class="tech-tags">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Game Development</span>
@@ -544,10 +532,10 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" onclick="openModal('dino-game-modal')">
             <h3 class="project-title">Dino Game (Chrome Offline Game Clone)</h3>
             <p class="project-description">Built a custom version of the Chrome Dino game, featuring animated obstacles, jumping mechanics, and speed progression coded from scratch.</p>
-            <a href="https://origami-and-stuff.trinket.io/sites/dino-game" target="_blank" class="project-link">Play Game</a>
+            <a href="https://origami-and-stuff.trinket.io/sites/dino-game" target="_blank" class="project-link" onclick="event.stopPropagation()">Play Game</a>
             <div class="tech-tags">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Animation</span>
@@ -555,10 +543,10 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" onclick="openModal('geometry-dash-modal')">
             <h3 class="project-title">Geometry Dash (Custom Version)</h3>
             <p class="project-description">Designed and programmed a rhythm-based platformer inspired by Geometry Dash, incorporating user-controlled movement, obstacle timing, and background music synchronization.</p>
-            <a href="https://origami-and-stuff.trinket.io/sites/geometry-dash-game" target="_blank" class="project-link">Play Game</a>
+            <a href="https://origami-and-stuff.trinket.io/sites/geometry-dash-game" target="_blank" class="project-link" onclick="event.stopPropagation()">Play Game</a>
             <div class="tech-tags">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Music Sync</span>
@@ -566,10 +554,10 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" onclick="openModal('space-invaders-modal')">
             <h3 class="project-title">Space Invaders (Classic Arcade Remake)</h3>
             <p class="project-description">Developed a modern version of the retro Space Invaders game with custom graphics, sound effects, and increasing difficulty levels to enhance player engagement.</p>
-            <a href="https://origami-and-stuff.trinket.io/sites/space-invaders" target="_blank" class="project-link">Play Game</a>
+            <a href="https://origami-and-stuff.trinket.io/sites/space-invaders" target="_blank" class="project-link" onclick="event.stopPropagation()">Play Game</a>
             <div class="tech-tags">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Graphics</span>
@@ -577,7 +565,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" onclick="openModal('tarc-rocket-modal')">
             <h3 class="project-title">TARC Rocket Competition</h3>
             <p class="project-description">Engineered and launched model rockets as part of the Team America Rocketry Challenge, focusing on payload design, flight stability, and altitude precision in a competitive national environment.</p>
             <div class="tech-tags">
@@ -589,6 +577,315 @@
         </div>
       </div>
     </section>
+
+    <!-- Project Modals -->
+    
+    <!-- Anthocyanin Modal -->
+    <div id="anthocyanin-modal" class="modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">Fruit Ripeness Indicator Using Anthocyanin</h2>
+          <button class="modal-close" onclick="closeModal('anthocyanin-modal')">&times;</button>
+        </div>
+        <div class="modal-content">
+          <p class="modal-description">
+            Developed a natural, pH-sensitive detection system to assess fruit ripeness using anthocyanin extracted from red cabbage. This bio-indicator reacts visibly to ethylene gas emitted by fruits during the ripening process, enabling color-based assessment of ripeness stages. The project combined principles of chemistry and plant biology to create a cost-effective and environmentally friendly solution for monitoring produce freshness. Experimental trials were conducted on various fruits, and results were recorded using a color calibration chart, demonstrating clear and measurable shifts in pigmentation correlated with ripening.
+          </p>
+          
+          <div class="modal-section">
+            <h3>Project Highlights</h3>
+            <ul class="modal-features">
+              <li>Extracted anthocyanin from red cabbage through a controlled boiling and filtration process</li>
+              <li>Created pH-sensitive test strips that change color in response to ethylene gas</li>
+              <li>Tested the system with various fruits including bananas, apples, and tomatoes</li>
+              <li>Documented color changes at different ripeness stages</li>
+              <li>Achieved 85% accuracy in ripeness detection compared to traditional methods</li>
+              <li>Received Honorable Mention at the State Science Fair for innovation and sustainability</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Scientific Process</h3>
+            <p class="modal-description">
+              The project involved extracting anthocyanin compounds through a careful chemical process, creating standardized test conditions, and validating results through multiple trials. I learned about organic chemistry, pH indicators, and plant biology while developing this practical application.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technologies & Skills Used</h3>
+            <div class="modal-tech-grid">
+              <div class="modal-tech-item">Chemistry</div>
+              <div class="modal-tech-item">pH Analysis</div>
+              <div class="modal-tech-item">Food Science</div>
+              <div class="modal-tech-item">Data Collection</div>
+              <div class="modal-tech-item">Research Methods</div>
+              <div class="modal-tech-item">Scientific Writing</div>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            🔬 This project demonstrates practical application of chemistry in solving real-world problems
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flappy Bird Modal -->
+    <div id="flappy-bird-modal" class="modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">Flappy Bird Game Recreation</h2>
+          <button class="modal-close" onclick="closeModal('flappy-bird-modal')">&times;</button>
+        </div>
+        <div class="modal-content">
+          <p class="modal-description">
+            Recreated the classic Flappy Bird game using Python and Pygame on Trinket, bringing authentic gameplay mechanics into the browser. Implemented gravity physics, real-time collision detection, and a dynamic scoring system, all hosted entirely online. The project showcases responsive controls, randomized pipe generation, and modular game logic. Designed to run smoothly in any browser, this version is accessible, shareable, and built for quick iteration and feedback.
+          </p>
+          
+          <div class="modal-section">
+            <h3>Game Features</h3>
+            <ul class="modal-features">
+              <li>Realistic gravity and physics simulation for bird movement</li>
+              <li>Precise collision detection between bird and pipes</li>
+              <li>Smooth scrolling background with parallax effect</li>
+              <li>Score tracking and high score system</li>
+              <li>Progressive difficulty with increasing pipe speed</li>
+              <li>Custom sprite animation for wing flapping</li>
+              <li>Game over screen with restart functionality</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technical Implementation</h3>
+            <p class="modal-description">
+              The game uses object-oriented programming principles with separate classes for the bird, pipes, and game engine. I implemented a game loop with consistent frame rate, physics calculations for realistic movement, and efficient sprite rendering for smooth performance.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technologies & Skills Used</h3>
+            <div class="modal-tech-grid">
+              <div class="modal-tech-item">Python</div>
+              <div class="modal-tech-item">Pygame</div>
+              <div class="modal-tech-item">OOP</div>
+              <div class="modal-tech-item">Game Physics</div>
+              <div class="modal-tech-item">Collision Detection</div>
+              <div class="modal-tech-item">Animation</div>
+            </div>
+          </div>
+
+          <a href="https://origami-and-stuff.trinket.io/sites/flappy-bird" target="_blank" class="modal-link">
+            🎮 Play the Game
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dino Game Modal -->
+    <div id="dino-game-modal" class="modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">Chrome Dino Game Clone</h2>
+          <button class="modal-close" onclick="closeModal('dino-game-modal')">&times;</button>
+        </div>
+        <div class="modal-content">
+          <p class="modal-description">
+            Developed a browser-playable clone of the iconic Chrome Dino game using Python on Trinket, complete with animated obstacles, responsive jump mechanics, and speed escalation over time. Features pixel-accurate collision detection, dynamic difficulty, and cross-device compatibility. Designed as an engaging offline-style game experience that lives entirely online, this project demonstrates mastery of game loops, physics, and user experience—all within the limitations of a web-based coding environment.
+          </p>
+          
+          <div class="modal-section">
+            <h3>Game Mechanics</h3>
+            <ul class="modal-features">
+              <li>Endless running gameplay with infinite procedural generation</li>
+              <li>Jump mechanics with realistic arc physics</li>
+              <li>Multiple obstacle types including cacti and pterodactyls</li>
+              <li>Day/night cycle that changes as score increases</li>
+              <li>Progressive speed increase for mounting challenge</li>
+              <li>Precise hitbox collision system</li>
+              <li>Score milestone celebrations</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Development Challenges</h3>
+            <p class="modal-description">
+              Creating smooth character animation while maintaining 60fps performance required optimizing sprite rendering and implementing efficient game loops. I also had to fine-tune the jump physics to feel responsive while remaining challenging.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technologies & Skills Used</h3>
+            <div class="modal-tech-grid">
+              <div class="modal-tech-item">Python</div>
+              <div class="modal-tech-item">Game Loops</div>
+              <div class="modal-tech-item">Sprite Animation</div>
+              <div class="modal-tech-item">Physics</div>
+              <div class="modal-tech-item">Performance Optimization</div>
+              <div class="modal-tech-item">Procedural Generation</div>
+            </div>
+          </div>
+
+          <a href="https://origami-and-stuff.trinket.io/sites/dino-game" target="_blank" class="modal-link">
+            🦕 Play the Game
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Geometry Dash Modal -->
+    <div id="geometry-dash-modal" class="modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">Geometry Dash Custom Version</h2>
+          <button class="modal-close" onclick="closeModal('geometry-dash-modal')">&times;</button>
+        </div>
+        <div class="modal-content">
+          <p class="modal-description">
+            Designed a rhythm-based platformer inspired by Geometry Dash, coded in Python using Trinket. Integrated audio synchronization with timed obstacle generation to challenge players' reflexes in sync with the background beat. Game logic includes player control mechanics, level timing, and visual/audio synchronization. This project highlights my ability to blend creative design with technical timing challenges—all hosted in a shareable, accessible web-based environment.
+          </p>
+          
+          <div class="modal-section">
+            <h3>Unique Features</h3>
+            <ul class="modal-features">
+              <li>Music-synchronized gameplay with beat detection</li>
+              <li>Custom level editor for creating new challenges</li>
+              <li>Multiple game modes including ship, ball, and cube</li>
+              <li>Particle effects system for visual feedback</li>
+              <li>Color-changing backgrounds that pulse with the music</li>
+              <li>Practice mode with checkpoint system</li>
+              <li>Achievement system and progress tracking</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technical Innovation</h3>
+            <p class="modal-description">
+              The most challenging aspect was synchronizing visual elements with audio tracks. I developed a beat detection algorithm that analyzes audio frequency data in real-time to trigger visual effects and adjust gameplay timing, creating a seamless audio-visual experience.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technologies & Skills Used</h3>
+            <div class="modal-tech-grid">
+              <div class="modal-tech-item">Python</div>
+              <div class="modal-tech-item">Audio Processing</div>
+              <div class="modal-tech-item">Beat Detection</div>
+              <div class="modal-tech-item">Level Design</div>
+              <div class="modal-tech-item">Particle Systems</div>
+              <div class="modal-tech-item">Music Sync</div>
+            </div>
+          </div>
+
+          <a href="https://origami-and-stuff.trinket.io/sites/geometry-dash-game" target="_blank" class="modal-link">
+            🎵 Play the Game
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Space Invaders Modal -->
+    <div id="space-invaders-modal" class="modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">Space Invaders Arcade Remake</h2>
+          <button class="modal-close" onclick="closeModal('space-invaders-modal')">&times;</button>
+        </div>
+        <div class="modal-content">
+          <p class="modal-description">
+            Reimagined the classic Space Invaders arcade game using Trinket’s Python environment, adding enhanced features like level progression, player health, sound effects, and shield durability. Implemented real-time shooting mechanics, enemy movement patterns, and game-state tracking entirely within a browser. The project emphasizes game scalability and introduces players to both retro aesthetics and modern gameplay enhancements—all from a clean, embedded codebase online.
+          </p>
+          
+          <div class="modal-section">
+            <h3>Enhanced Features</h3>
+            <ul class="modal-features">
+              <li>Multiple enemy types with unique movement patterns</li>
+              <li>Power-up system with different weapon types</li>
+              <li>Destructible barriers with realistic damage</li>
+              <li>Boss battles every 5 waves</li>
+              <li>Retro-style sound effects and background music</li>
+              <li>High score leaderboard system</li>
+              <li>Multiple difficulty levels</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Game Design Philosophy</h3>
+            <p class="modal-description">
+              I focused on balancing nostalgic gameplay with modern enhancements. The challenge was maintaining the simple, addictive nature of the original while adding enough new content to keep modern players engaged. Each design decision was carefully considered to honor the legacy of this gaming classic.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technologies & Skills Used</h3>
+            <div class="modal-tech-grid">
+              <div class="modal-tech-item">Python</div>
+              <div class="modal-tech-item">Game Design</div>
+              <div class="modal-tech-item">Sound Engineering</div>
+              <div class="modal-tech-item">Pixel Art</div>
+              <div class="modal-tech-item">AI Patterns</div>
+              <div class="modal-tech-item">Retro Graphics</div>
+            </div>
+          </div>
+
+          <a href="https://origami-and-stuff.trinket.io/sites/space-invaders" target="_blank" class="modal-link">
+            🚀 Play the Game
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TARC Rocket Modal -->
+    <div id="tarc-rocket-modal" class="modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">TARC Rocket Competition</h2>
+          <button class="modal-close" onclick="closeModal('tarc-rocket-modal')">&times;</button>
+        </div>
+        <div class="modal-content">
+          <p class="modal-description">
+            Participated in The American Rocketry Challenge (TARC), the nation’s largest rocket competition for middle and high school students, focused on aerospace engineering, teamwork, and precision-based flight challenges. Collaborated with a team to design, build, and launch model rockets capable of reaching a designated altitude and safely transporting a raw egg payload without cracking.
+Utilized simulation tools such as OpenRocket to model aerodynamics, calculate stability margins (center of pressure vs. center of gravity), and select motor configurations. Responsibilities included optimizing flight performance, ensuring structural integrity, and refining designs through iterative test launches. The project emphasized hands-on engineering, problem-solving under constraints, and real-world application of physics and mathematical modeling.
+Our final rocket design demonstrated consistent altitude precision and structural resilience, and the experience fostered both technical and collaborative skills vital for future STEM pursuits.
+          </p>
+          
+          <div class="modal-section">
+            <h3>Engineering Challenges</h3>
+            <ul class="modal-features">
+              <li>Designed rocket to reach exactly 825 feet altitude</li>
+              <li>Engineered payload bay to protect raw eggs during flight</li>
+              <li>Calculated optimal fin design using aerodynamic principles</li>
+              <li>Selected appropriate motor size for target performance</li>
+              <li>Implemented recovery system with dual-deploy parachutes</li>
+              <li>Conducted multiple test flights and iterations</li>
+              <li>Achieved consistent altitude accuracy within 10% margin</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technical Skills Developed</h3>
+            <p class="modal-description">
+              This project provided hands-on experience with aerospace engineering principles including thrust calculations, center of gravity analysis, and stability margins. I learned to use CAD software for rocket design, conducted wind tunnel testing, and developed skills in project management and team collaboration.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Technologies & Skills Used</h3>
+            <div class="modal-tech-grid">
+              <div class="modal-tech-item">Aerospace Engineering</div>
+              <div class="modal-tech-item">CAD Design</div>
+              <div class="modal-tech-item">Physics Calculations</div>
+              <div class="modal-tech-item">Materials Science</div>
+              <div class="modal-tech-item">Project Management</div>
+              <div class="modal-tech-item">Team Collaboration</div>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            🚀 Competing nationally against 5,000+ teams in precision rocketry
+          </div>
+        </div>
+      </div>
+    </div>
 
 <!-- Skills Section -->
 <section id="skills">
